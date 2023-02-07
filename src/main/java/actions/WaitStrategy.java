@@ -10,22 +10,18 @@ import static config.DriverManager.getDriver;
 public class WaitStrategy {
 
     private static final int DEFAULT_TIMEOUT = 30;
-    /**examples
-     *
-     */
-    //implicit wait
 
     //explicit wait
     public void explicitWait() {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.titleIs("emag"));
+        wait.until(ExpectedConditions.titleIs("Stephanus"));
     }
 
     //fluent wait
     public void fluentWait() {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(getDriver(), Duration.ofSeconds(30))
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(getDriver(), Duration.ofSeconds(5))
                 .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(1))
+                .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(Exception.class);
     }
 

@@ -13,6 +13,7 @@ import reporting.ExtentTestManager;
 import testng.TestListeners;
 
 import java.lang.reflect.Method;
+import java.time.Duration;
 import java.util.Optional;
 
 @Listeners(TestListeners.class)
@@ -31,13 +32,15 @@ public class BaseTest {
     @BeforeTest
     public void setUp(String browser) {
         DriverManager.setDriver(browser);
-        properties = new ConfigProperties().readConfigProperties();
         homePage = new HomePage();
+        DriverManager.getDriver().manage().window().maximize();
+        DriverManager.getDriver().navigate().to("https://www.stephanus.ro/");
+        DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
     @BeforeClass
     public void navigateToUrl() {
-        DriverManager.getDriver().navigate().to(properties.getUrl());
+        DriverManager.getDriver().navigate().to("https://www.stephanus.ro/");
     }
 
     @BeforeMethod(alwaysRun = true)
