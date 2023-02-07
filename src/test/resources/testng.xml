@@ -6,17 +6,24 @@
         <listener class-name="testng.AnnotationTransformer"/>
     </listeners>
 
-<!--    <test name="Cautare produs">-->
-<!--         <parameter name="browser" value="chrome"/>-->
-<!--         <classes>-->
-<!--            <class name="tests.CautareProdus.CautareCarte"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Cautare produs">
+         <parameter name="browser" value="chrome"/>
+         <classes>
+            <class name="tests.CautareProdus.CautareCarte"/>
+        </classes>
+    </test>
 
     <test name="Adaugare produs in cos">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.AdaugareProdusInCos.AdaugareInCos"/>
+        </classes>
+    </test>
+
+    <test name="Autentificare client">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.AutentificareClient.Autentificare"/>
         </classes>
     </test>
 

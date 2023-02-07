@@ -34,7 +34,7 @@ public class BaseTest {
         DriverManager.setDriver(browser);
         homePage = new HomePage();
         DriverManager.getDriver().manage().window().maximize();
-        DriverManager.getDriver().navigate().to("https://www.stephanus.ro/");
+        //DriverManager.getDriver().navigate().to("https://www.stephanus.ro/");
         DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 

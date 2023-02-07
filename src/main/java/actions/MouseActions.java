@@ -30,5 +30,13 @@ public class MouseActions {
     }
 
     //TODO add more methods : double click, right click, click and hold, etc
+
+    public void doubleClickOn(final WebElement element) {
+        wait.isElementClickable((By) element, DEFAULT_TIMEOUT);
+        element.click();
+        wait.isElementClickable((By) element, DEFAULT_TIMEOUT);
+        element.click();
+    }
+
     //TODO add methods with JavaScriptExecutor
 }

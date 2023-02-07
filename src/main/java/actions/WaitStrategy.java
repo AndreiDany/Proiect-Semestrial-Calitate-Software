@@ -19,9 +19,9 @@ public class WaitStrategy {
 
     //fluent wait
     public void fluentWait() {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(getDriver(), Duration.ofSeconds(5))
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(getDriver(), Duration.ofSeconds(30))
                 .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(Exception.class);
     }
 
@@ -57,7 +57,7 @@ public class WaitStrategy {
         waitForElement(ExpectedConditions.visibilityOf(elem), Duration.ofSeconds(DEFAULT_TIMEOUT));
     }
 
-    public void waitFor(Duration intervalMs) {
+    public static void waitFor(Duration intervalMs) {
         try {
 //            LOG.info("Waiting for {} ms", intervalMs.toMillis());
             Thread.sleep(intervalMs.toMillis());

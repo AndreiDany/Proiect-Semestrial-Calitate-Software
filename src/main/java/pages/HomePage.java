@@ -1,10 +1,13 @@
 package pages;
 
 import actions.Actions;
+import actions.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
 import util.CustomLogger;
+
+import java.time.Duration;
 
 public class HomePage extends Actions {
 
@@ -16,6 +19,8 @@ public class HomePage extends Actions {
 
     private final By categorieProduse = By.xpath("//header/div[2]/div[1]/div[2]/nav[1]/ul[1]/li[2]/a[1]");
 
+    private final By buttonDeAutentificare = By.xpath("//a[contains(text(),'Autentifică-te')]");
+
 
     public HomePage cautareProdus(String produs){
         LOG.info("Cauta produs: {}", produs);
@@ -23,6 +28,8 @@ public class HomePage extends Actions {
         keyboardActions.clearTheText(searchBar);
         keyboardActions.typeText(searchBar, produs);
         keyboardActions.typeText(searchBar, String.valueOf(Keys.ENTER));
+
+        WaitStrategy.waitFor(Duration.ofSeconds(3));
 
         return this;
     }
@@ -33,6 +40,16 @@ public class HomePage extends Actions {
         mouseActions.clickOn(categorieProduse);
 
         return new CartiCrestine();
+    }
+
+    public PaginaDeAutentificare autentificare(){
+        LOG.info("selectare buton autentificare");
+
+        mouseActions.clickOn(buttonDeAutentificare);
+
+        WaitStrategy.waitFor(Duration.ofSeconds(3));
+
+        return new PaginaDeAutentificare();
     }
 
 }
