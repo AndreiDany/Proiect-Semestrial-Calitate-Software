@@ -27,4 +27,18 @@
         </classes>
     </test>
 
+    <test name="Detalii produs">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.DetaliiProdus.Detalii"/>
+        </classes>
+    </test>
+
+    <test name="Selectare gama de produse din imagini si cresterea cantitatii">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.GameDeProduse.SelectareProdusCantitativ"/>
+        </classes>
+    </test>
+
 </suite>

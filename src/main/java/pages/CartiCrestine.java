@@ -16,9 +16,13 @@ public class CartiCrestine extends Actions {
 
     private final By butonCosCumparaturi = By.xpath("//header/div[2]/div[1]/nav[2]/ul[1]/li[3]/a[1]");
 
+    private final By butonCarte = By.xpath("//body/div[6]/div[1]/div[1]/main[1]/div[8]/form[1]/ul[1]/li[2]/article[1]/div[1]/figure[1]/a[1]/div[1]/span[1]/img[1]");
+
+
     public CartiCrestine adaugaInCos(){
         LOG.info("Adauga in cos");
 
+        mouseActions.scrollDown();
         mouseActions.clickOn(butonAdaugaInCos);
         WaitStrategy.waitFor(Duration.ofSeconds(3));
         return this;
@@ -31,6 +35,14 @@ public class CartiCrestine extends Actions {
         WaitStrategy.waitFor(Duration.ofSeconds(7));
 
         return this;
+    }
+    public Produs alegeCarte(){
+        LOG.info("Alege cartea");
+
+        mouseActions.clickOn(butonCarte);
+        WaitStrategy.waitFor(Duration.ofSeconds(2));
+
+        return new Produs();
     }
 
 }

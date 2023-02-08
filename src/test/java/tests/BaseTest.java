@@ -48,6 +48,7 @@ public class BaseTest {
         Test test = method.getAnnotation(Test.class);
         ExtentTestManager.createTest(method.getName(), test.description(), DriverManager.getDriverName());
         ExtentTestManager.getTest().assignAuthor("General_status");
+
     }
 
     @AfterMethod(alwaysRun = true)
