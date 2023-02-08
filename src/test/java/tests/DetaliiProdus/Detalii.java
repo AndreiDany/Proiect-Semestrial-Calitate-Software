@@ -6,7 +6,7 @@ import tests.BaseTest;
 public class Detalii extends BaseTest {
 
     @Test(description = "Detaliile unui produs")
-    public void detaliileProdus() {
+    public void detaliileProdusului() {
         homePage
                 .selectareCategorieProduse()
                 .alegeCarte()

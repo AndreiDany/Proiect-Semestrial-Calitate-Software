@@ -22,7 +22,6 @@ public class CartiCrestine extends Actions {
     public CartiCrestine adaugaInCos(){
         LOG.info("Adauga in cos");
 
-        mouseActions.scrollDown();
         mouseActions.clickOn(butonAdaugaInCos);
         WaitStrategy.waitFor(Duration.ofSeconds(3));
         return this;
